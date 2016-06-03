@@ -33,3 +33,4 @@ C:\Users\babuelaynein\documents\visual studio 2015\Projects\NewzBot\NewzBot\bin\
 C:\Users\babuelaynein\documents\visual studio 2015\Projects\NewzBot\NewzBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
 C:\Users\babuelaynein\documents\visual studio 2015\Projects\NewzBot\NewzBot\obj\Debug\NewzBot.dll
 C:\Users\babuelaynein\documents\visual studio 2015\Projects\NewzBot\NewzBot\obj\Debug\NewzBot.pdb
+C:\Users\babuelaynein\documents\visual studio 2015\Projects\NewzBot\NewzBot\obj\Debug\NewzBot.csprojResolveAssemblyReference.cache
