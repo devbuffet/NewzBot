@@ -42,7 +42,7 @@ namespace NewzBot
             using (WebClient client = new WebClient())
             {
                 byte[] data = await client.DownloadDataTaskAsync(this.url);
-                download = Encoding.ASCII.GetString(data);
+                download = Encoding.UTF8.GetString(data);
             }
 
             // returns download info
@@ -74,7 +74,9 @@ namespace NewzBot
                 //resp.Append("[" + div.InnerText + "](" + nodes[0].Attributes["href"].Value + ")");
                 //resp.Append($"{Environment.NewLine}{Environment.NewLine}");
 
-                resp.Append(nodes[0].Attributes["href"].Value);
+                //resp.Append(nodes[0].Attributes["href"].Value);
+
+                resp.Append(div.InnerText);
 
                 //resp.Append("http://www.google.com");
 
