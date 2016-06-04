@@ -76,7 +76,7 @@ namespace NewzBot
 
                 //resp.Append(nodes[0].Attributes["href"].Value);
 
-                resp.Append(div.InnerText);
+                resp.Append(nodes[0].Attributes["href"].Value);
 
                 //resp.Append("http://www.google.com");
 
