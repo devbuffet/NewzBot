@@ -42,7 +42,7 @@ namespace NewzBot
             using (WebClient client = new WebClient())
             {
                 byte[] data = await client.DownloadDataTaskAsync(this.url);
-                download = "Hello world"; // Encoding.ASCII.GetString(data);
+                download = "Hello World";// Encoding.ASCII.GetString(data);
             }
 
             // returns download info
@@ -56,6 +56,8 @@ namespace NewzBot
         /// <returns></returns>
         private string returnNewsItems(string download)
         {
+            return "Hello";
+
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(download);
 
