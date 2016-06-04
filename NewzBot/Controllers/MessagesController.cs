@@ -42,7 +42,7 @@ namespace NewzBot
             using (WebClient client = new WebClient())
             {
                 byte[] data = await client.DownloadDataTaskAsync(this.url);
-                download = Encoding.ASCII.GetString(data);
+                download = "Hello world"; // Encoding.ASCII.GetString(data);
             }
 
             // returns download info
