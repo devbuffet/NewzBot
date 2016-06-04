@@ -27,8 +27,7 @@ namespace NewzBot
         public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<Message> argument)
         {
             var message = await returnDownload(this.url); // get download info
-            //await context.PostAsync("length: " + returnNewsItems(message).Length.ToString()); // get news items
-            await context.PostAsync(this.url);
+            await context.PostAsync(returnNewsItems(message));
             context.Wait(MessageReceivedAsync);
         }
 
@@ -43,9 +42,7 @@ namespace NewzBot
             using (WebClient client = new WebClient())
             {
                 byte[] data = await client.DownloadDataTaskAsync(this.url);
-                //download = "Hello World";// Encoding.ASCII.GetString(data);
                 download = Encoding.UTF8.GetString(data);
-
             }
 
             // returns download info
@@ -73,9 +70,12 @@ namespace NewzBot
 
                 HtmlNodeCollection nodes = docX.DocumentNode.SelectNodes("//a[@href]");
 
-                resp.Append($"{Environment.NewLine}{Environment.NewLine}");
-                resp.Append("[" + div.InnerText + "](" + nodes[0].Attributes["href"].Value + ")");
-                resp.Append($"{Environment.NewLine}{Environment.NewLine}");
+                //resp.Append($"{Environment.NewLine}{Environment.NewLine}");
+                //resp.Append("[" + div.InnerText + "](" + nodes[0].Attributes["href"].Value + ")");
+                //resp.Append($"{Environment.NewLine}{Environment.NewLine}");
+
+                resp.Append(nodes[0].Attributes["href"].Value + "\0x0A");
+
             }
 
             return resp.ToString();
