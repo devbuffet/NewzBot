@@ -27,7 +27,7 @@ namespace NewzBot
         public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<Message> argument)
         {
             var message = await returnDownload(this.url); // get download info
-            await context.PostAsync(returnNewsItems(message)); // get news items
+            await context.PostAsync("length: " + returnNewsItems(message).Length.ToString()); // get news items
             context.Wait(MessageReceivedAsync);
         }
 
