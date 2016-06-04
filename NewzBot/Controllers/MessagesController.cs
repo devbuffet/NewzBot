@@ -27,7 +27,8 @@ namespace NewzBot
         public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<Message> argument)
         {
             var message = await returnDownload(this.url); // get download info
-            await context.PostAsync("length: " + returnNewsItems(message).Length.ToString()); // get news items
+            //await context.PostAsync("length: " + returnNewsItems(message).Length.ToString()); // get news items
+            await context.PostAsync(this.url);
             context.Wait(MessageReceivedAsync);
         }
 
@@ -58,8 +59,6 @@ namespace NewzBot
         /// <returns></returns>
         private string returnNewsItems(string download)
         {
-            //return "Hello";
-
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(download);
 
