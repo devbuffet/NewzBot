@@ -71,7 +71,9 @@ namespace NewzBot
                 HtmlNodeCollection nodes = docX.DocumentNode.SelectNodes("//a[@href]");
 
                 resp.Append($"{Environment.NewLine}{Environment.NewLine}");
-                resp.Append("[" + div.InnerText + "](" + nodes[0].Attributes["href"].Value + ")\n\n");
+                resp.Append("[" + div.InnerText + "](" + nodes[0].Attributes["href"].Value + ")\n");
+                resp.Append("");
+                resp.Append("");
                 resp.Append($"{Environment.NewLine}{Environment.NewLine}");
 
                 //resp.Append(nodes[0].Attributes["href"].Value);
